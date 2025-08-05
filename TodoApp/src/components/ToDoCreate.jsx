@@ -26,7 +26,6 @@ function ToDoCreate({ onCreateTodo }) {
             <input
                 value={newTodo}
                 onChange={(e) => setNewTodo(e.target.value)}
-
                 className='todo-input'
                 type="text" placeholder='Todo Giriniz' />
             <button onClick={createTodo} className='todo-create-button'>ToDo Oluştur</button>

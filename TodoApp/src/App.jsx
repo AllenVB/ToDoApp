@@ -17,6 +17,16 @@ function App() {
     console.log(extractedArray)
   }
 
+  const updateTodo = (newTodo) => {
+    const updatedTodos = todos.map((todo) => {
+      if (todo.id !== newTodo.id) {
+        return todo
+      }
+      return newTodo
+    })
+    setTodos([...updatedTodos])
+  }
+
 
   console.log(todos)
 
@@ -25,7 +35,7 @@ function App() {
     <div className='App'>
       <div className='main'>
         <ToDoCreate onCreateTodo={createTodo} />
-        <ToDoList todos={todos} onRemoveTodo={removeTodo} />
+        <ToDoList todos={todos} onRemoveTodo={removeTodo} onUpdateTodo={updateTodo} />
       </div>
     </div>
   )
